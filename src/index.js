@@ -49,9 +49,10 @@ function renderHTML(countries) {
       //   console.log("RENDER LIST ITEM");
 
       const listMarkup = countries.map(country => {
-        return `<li> <img src = "${country.flags.svg}" height = "20px">${country.name}</li>`;
-      });
+        return `<li> <img src = "${country.flags.svg}" height = "20px">${country.name}</li>`; 
+      }).join(" ");
       refs.listItemEl.innerHTML = ' ';
+      console.log(listMarkup);
       refs.listEl.innerHTML = listMarkup;
     } else if (countries.length === 1) {
       const countryCard = `<div>  
