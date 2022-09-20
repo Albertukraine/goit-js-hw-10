@@ -36,7 +36,7 @@ function onInput(event) {
 
 function renderHTML(countries) {
   if (countries.length > 10) {
-    Notify.failure(
+    Notify.info(
       "Too many matches found. Please enter a more specific name."
     );
     return;
