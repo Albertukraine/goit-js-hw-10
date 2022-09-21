@@ -29,7 +29,7 @@ function onInput(event) {
       })
       .then(countries => renderHTML(countries))
       .catch(error =>
-        Notify.failure('Oops, there is no country with that name')
+        Notify.failure('Oops, there is no country with that name'), clearHtml()
       );
   }
 }
@@ -69,3 +69,8 @@ function renderHTML(countries) {
 }
 
 refs.formEl.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
+
+function clearHtml() {
+  refs.listEl.innerHTML = ' ';
+      refs.listItemEl.innerHTML = ' ';
+};
